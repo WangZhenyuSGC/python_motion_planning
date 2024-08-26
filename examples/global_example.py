@@ -4,7 +4,8 @@
 @author: Winter
 @update: 2023.3.2
 """
-
+import sys
+sys.path.append('/home/ubuntu/workspace/wang/sho-gun/remote_pc/ros2_ws/src/python_motion_planning')
 from python_motion_planning.utils import Grid, Map, SearchFactory
 
 
@@ -26,7 +27,7 @@ if __name__ == '__main__':
     # planner = search_factory("a_star", start=start, goal=goal, env=env)
     # planner = search_factory("dijkstra", start=start, goal=goal, env=env)
     # planner = search_factory("gbfs", start=start, goal=goal, env=env)
-    # planner = search_factory("theta_star", start=start, goal=goal, env=env)
+    planner = search_factory("theta_star", start=start, goal=goal, env=env)
     # planner = search_factory("lazy_theta_star", start=start, goal=goal, env=env)
     # planner = search_factory("s_theta_star", start=start, goal=goal, env=env)
     # planner = search_factory("jps", start=start, goal=goal, env=env)
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     #                             max_edge_len=10.0, inflation_r=1.0)
 
     # animation
-    # planner.run()
+    planner.run()
 
     # ========================================================
 
