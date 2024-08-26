@@ -11,6 +11,7 @@ import numpy as np
 
 from .node import Node
 
+# TODO: 障害物の初期設定
 class Env(ABC):
     """
     Class for building 2-d workspace of robots.
