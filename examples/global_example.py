@@ -20,10 +20,28 @@ if __name__ == '__main__':
     graph search
     '''
     # build environment
-    start = (5, 5)
-    goal = (45, 5)
-    env = Grid(51, 31)
+    # start = (5, 5)
+    # goal = (45, 5)
+    # env = Grid(51, 31)
 
+    field_width = 82
+    field_height = 144
+    start = (20, 70)
+    goal = (20, 20)
+    env = Grid(field_width, field_height)
+
+    obstacles = set()
+    for i in range(field_width):
+        obstacles.add((i, 0))
+        obstacles.add((i, field_height - 1))
+    for i in range(field_height):
+        obstacles.add((0, i))
+        obstacles.add((field_width - 1, i))
+    for i in range(0, 30):
+        obstacles.add((i, 40))
+        obstacles.add((field_width - i, 40))
+    
+    env.update(obstacles)
     # creat planner
     # planner = search_factory("a_star", start=start, goal=goal, env=env)
     # planner = search_factory("dijkstra", start=start, goal=goal, env=env)
@@ -66,5 +84,5 @@ if __name__ == '__main__':
     evolutionary search
     '''
     # planner = search_factory("aco", start=start, goal=goal, env=env)
-    planner = search_factory("pso", start=start, goal=goal, env=env)
-    planner.run()
+    # planner = search_factory("pso", start=start, goal=goal, env=env)
+    # planner.run()
