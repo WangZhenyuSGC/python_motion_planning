@@ -71,14 +71,14 @@ class Grid(Env):
             obstacles.add((x - 1, i))
 
         # user-defined obstacles        
-        for i in range(10, 21):
-            obstacles.add((i, 15))
-        for i in range(15):
-            obstacles.add((20, i))
-        for i in range(15, 30):
-            obstacles.add((30, i))
-        for i in range(16):
-            obstacles.add((40, i))
+        # for i in range(10, 21):
+        #     obstacles.add((i, 15))
+        # for i in range(15):
+        #     obstacles.add((20, i))
+        # for i in range(15, 30):
+        #     obstacles.add((30, i))
+        # for i in range(16):
+        #     obstacles.add((40, i))
 
         self.obstacles = obstacles
         self.obstacles_tree = cKDTree(np.array(list(obstacles)))
@@ -113,21 +113,21 @@ class Map(Env):
             [x, 1, 1, y]
         ]
 
-        # user-defined obstacles
-        self.obs_rect = [
-            [14, 12, 8, 2],
-            [18, 22, 8, 3],
-            [26, 7, 2, 12],
-            [32, 14, 10, 2]
-        ]
+        # # user-defined obstacles
+        # self.obs_rect = [
+        #     [14, 12, 8, 2],
+        #     [18, 22, 8, 3],
+        #     [26, 7, 2, 12],
+        #     [32, 14, 10, 2]
+        # ]
 
-        self.obs_circ = [
-            [7, 12, 3],
-            [46, 20, 2],
-            [15, 5, 2],
-            [37, 7, 3],
-            [37, 23, 3]
-        ]
+        # self.obs_circ = [
+        #     [7, 12, 3],
+        #     [46, 20, 2],
+        #     [15, 5, 2],
+        #     [37, 7, 3],
+        #     [37, 23, 3]
+        # ]
 
     def update(self, boundary, obs_circ, obs_rect):
         self.boundary = boundary if boundary else self.boundary
