@@ -5,7 +5,8 @@
 @update: 2023.3.2
 """
 import sys
-sys.path.append('/home/ubuntu/workspace/wang/sho-gun/remote_pc/ros2_ws/src/python_motion_planning')
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
 from python_motion_planning.utils import Grid, Map, SearchFactory
 
 
